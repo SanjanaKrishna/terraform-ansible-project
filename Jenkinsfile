@@ -19,7 +19,7 @@ pipeline {
                 not { equals expected: true, actual: params.destroy }
             }
             steps {
-                git 'https://github.com/your-repo/terraform-ansible-project.git'
+                git 'https://github.com/SanjanaKrishna/terraform-ansible-project.git'
             }
         }
 
