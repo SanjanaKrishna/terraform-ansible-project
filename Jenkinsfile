@@ -31,7 +31,7 @@ pipeline {
                         dir("terraform") {
                             // Check if the "terra-cloud" directory exists
                             sh '''
-                                if [ -d "terra-cloud" ]; then
+                                if [ -d "terraform-ansible-project" ]; then
                                     echo "Directory exists. Deleting it..."
                                     rm -rf terra-cloud
                                 fi
@@ -51,7 +51,7 @@ pipeline {
             }
             
           steps {
-                dir('terraform/terra-cloud') {  // Adjust path as needed
+                dir('terraform/terraform-ansible-project') {  // Adjust path as needed
                     sh 'terraform init -input=false'
                     sh 'terraform workspace select ${environment} || terraform workspace new ${environment}'
                     sh "terraform plan -input=false -out tfplan "
