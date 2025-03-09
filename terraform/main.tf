@@ -6,10 +6,10 @@ module "ec2" {
   subnet_id     = var.subnet_id
 }
 
-resource "aws_key_pair" "ssh_key" {
-  key_name   = "terraform-key"
-  public_key = file("~/.ssh/id_rsa.pub")
-}
+#resource "aws_key_pair" "ssh_key" {
+ # key_name   = "terraform-key"
+ # public_key = file("~/.ssh/id_rsa.pub")
+# }
 
 output "instance_public_ip" {
   value = module.ec2.public_ip
