@@ -2,7 +2,7 @@ module "ec2" {
   source        = "./modules/ec2-instance"
   instance_type = var.instance_type
   ami_id        = var.ami_id
-  key_name      = aws_key_pair.ssh_key.key_name
+  #key_name      = aws_key_pair.ssh_key.key_name
   subnet_id     = var.subnet_id
 }
 
